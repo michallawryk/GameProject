@@ -3,17 +3,31 @@ using UnityEngine.InputSystem;
 
 public class Player1Movement : MonoBehaviour
 {
-    [SerializeField] private float jumpingPower;
-    [SerializeField] private float moveSpeed;    
-    [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private InputActionReference move;
-    [SerializeField] private InputActionReference jump;
-    [SerializeField] private InputActionReference interact;
+    [SerializeField] 
+    private float jumpingPower;
+    [SerializeField] 
+    private float moveSpeed;    
+    [SerializeField] 
+    private Transform groundCheckPoint;
+    [SerializeField] 
+    private LayerMask groundLayer;
+    [SerializeField] 
+    private InputActionReference move;
+    [SerializeField] 
+    private InputActionReference jump;
+    [SerializeField] 
+    private InputActionReference interact;
 
+    private Rigidbody2D rb;
     private Vector2 _moveDirection;
     private bool isFacingRight = true;
+    private float groundCheckRadius = 0.2f;
+
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -41,15 +55,25 @@ public class Player1Movement : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext obj)
     {
-        //if (IsGrounded())
-        //{  
+        if (IsGrounded())
+        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
-        //}
-    }
+        }
+}
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPoint.position, groundCheckRadius, groundLayer);
+        bool isGrounded = false;
+        foreach (var col in colliders)
+        {
+            if (col.gameObject != gameObject)
+            {
+                isGrounded = true;
+                break;
+            }
+        }
+        return isGrounded;
     }
 
     private void Flip()

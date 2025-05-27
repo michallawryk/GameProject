@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class CameraScaler : MonoBehaviour
 {
-    [SerializeField] private float targetWidth = 1920f;
-    [SerializeField] private float targetHeight = 1080f;
+    [SerializeField] 
+    private float targetWidth = 1920f;
+    [SerializeField] 
+    private float targetHeight = 1080f;
 
     void Start()
     {
