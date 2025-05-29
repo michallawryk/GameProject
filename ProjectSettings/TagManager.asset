@@ -3,17 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Ground
+  - Button
+  - Lever
+  - Box
+  - Goal
+  - Obstacle
+  - Door
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Border
+  - Players
   - Water
   - UI
-  - Jumpable
-  - 
-  - 
+  - Environment
+  - Interactables
+  - Triggers
   - 
   - 
   - 
