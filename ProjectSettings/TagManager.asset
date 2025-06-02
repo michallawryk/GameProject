@@ -5,12 +5,14 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
-  - Button
+  - PressurePlate
   - Lever
   - Box
   - Goal
   - Obstacle
   - Door
+  - Volt
+  - Core
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - Environment
   - Interactables
   - Triggers
-  - 
+  - Box
   - 
   - 
   - 

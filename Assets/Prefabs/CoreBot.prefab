@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3276630066995489352}
   m_Layer: 3
   m_Name: CoreBot
-  m_TagString: Player
+  m_TagString: Core
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 4288453235422848883}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.23, y: -1.47, z: -0.012635163}
+  m_LocalPosition: {x: 6.23, y: -1.47, z: 2}
   m_LocalScale: {x: 0.36014143, y: 0.30473253, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -212,10 +212,10 @@ MonoBehaviour:
   groundCheckPoint: {fileID: 8864527630733342443}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 72
+    m_Bits: 584
   move: {fileID: -4904130036943897184, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   jump: {fileID: -3012473669202923855, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   interact: {fileID: 1228584145117784216, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   hasDoubleJump: 0
-  canControlObjects: 0
+  canInteract: 1
   canMove: 1
