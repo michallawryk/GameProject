@@ -1,0 +1,383 @@
+fileFormatVersion: 2
+guid: e33744ebb72912643b795af6942b12f7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6020044205732851087
+    second: LevelLabelsSprite_0
+  - first:
+      213: -7378287575731977069
+    second: LevelLabelsSprite_1
+  - first:
+      213: 4812221440932301899
+    second: LevelLabelsSprite_2
+  - first:
+      213: 6387201445748682935
+    second: LevelLabelsSprite_3
+  - first:
+      213: -6267523335660626596
+    second: LevelLabelsSprite_4
+  - first:
+      213: -1413082676816099594
+    second: LevelLabelsSprite_5
+  - first:
+      213: 7673187607670446677
+    second: LevelLabelsSprite_6
+  - first:
+      213: 2516818940351985582
+    second: LevelLabelsSprite_7
+  - first:
+      213: -2887987942091261607
+    second: LevelLabelsSprite_8
+  - first:
+      213: 8456157039413916889
+    second: LevelLabelsSprite_9
+  - first:
+      213: 7199522288051458622
+    second: LevelLabelsSprite_10
+  - first:
+      213: -4926619333510624566
+    second: LevelLabelsSprite_11
+  - first:
+      213: 2817015954743622186
+    second: LevelLabelsSprite_12
+  - first:
+      213: -3712985680582206726
+    second: LevelLabelsSprite_13
+  - first:
+      213: 1241828421453567549
+    second: LevelLabelsSprite_14
+  - first:
+      213: 1694458234743065670
+    second: LevelLabelsSprite_15
+  - first:
+      213: 4874127045846972376
+    second: LevelLabelsSprite_16
+  - first:
+      213: -7471359343768988776
+    second: LevelLabelsSprite_17
+  - first:
+      213: -2362627160220977470
+    second: LevelLabelsSprite_18
+  - first:
+      213: -3392473893117716934
+    second: LevelLabelsSprite_19
+  - first:
+      213: -573003654018874690
+    second: LevelLabelsSprite_20
+  - first:
+      213: -3090610983368247686
+    second: LevelLabelsSprite_21
+  - first:
+      213: -8405306339848982785
+    second: LevelLabelsSprite_22
+  - first:
+      213: -1003590929128588564
+    second: LevelLabelsSprite_23
+  - first:
+      213: -9021704511878205394
+    second: LevelLabelsSprite_24
+  - first:
+      213: -2087654267163006724
+    second: LevelLabelsSprite_25
+  - first:
+      213: 3011325845270236274
+    second: LevelLabelsSprite_26
+  - first:
+      213: -5632997432258948843
+    second: LevelLabelsSprite_27
+  - first:
+      213: -8248253731248423802
+    second: LevelLabelsSprite_28
+  - first:
+      213: -5882213280824541256
+    second: LevelLabelsSprite_29
+  - first:
+      213: 4657562960597635711
+    second: LevelLabelsSprite_30
+  - first:
+      213: -1865400459171844199
+    second: LevelLabelsSprite_31
+  - first:
+      213: -7657192593868440271
+    second: LevelLabelsSprite_32
+  - first:
+      213: 8079616607064149532
+    second: LevelLabelsSprite_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LevelLabelsSprite_
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 514
+        width: 470
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1721521c0b1847ca0800000000000000
+      internalID: -6020044205732851087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelLabelsSprite_1
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 514
+        width: 470
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39441ddaa8e0b9990800000000000000
+      internalID: -7378287575731977069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelLabelsSprite_2
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 514
+        width: 470
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4cc94f77e178c240800000000000000
+      internalID: 4812221440932301899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelLabelsSprite_3
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 104
+        width: 470
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b036b2cfd5e3a850800000000000000
+      internalID: 6387201445748682935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelLabelsSprite_4
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 104
+        width: 470
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d1a74abb84509a0800000000000000
+      internalID: -6267523335660626596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelLabelsSprite_6
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 104
+        width: 470
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f64e12dac8b36ce0800000000000000
+      internalID: -1413082676816099594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c6bce3816df0e7f428b0fc487398f1dc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LevelLabelsSprite_: -6020044205732851087
+      LevelLabelsSprite_1: -7378287575731977069
+      LevelLabelsSprite_2: 4812221440932301899
+      LevelLabelsSprite_3: 6387201445748682935
+      LevelLabelsSprite_4: -6267523335660626596
+      LevelLabelsSprite_6: -1413082676816099594
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

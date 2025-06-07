@@ -8,11 +8,15 @@ TagManager:
   - PressurePlate
   - Lever
   - Box
+  - MagneticBox
+  - MagneticWall
   - Goal
   - Obstacle
   - Door
   - Volt
   - Core
+  - ControlPanel
+  - ElectricBox
   layers:
   - Default
   - TransparentFX
