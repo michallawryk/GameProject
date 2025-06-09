@@ -23,7 +23,7 @@ public class FanRotor : MonoBehaviour
     {
         if (isRotating)
         {
-            float direction = rotateClockwise ? 1f : -1f;
+            float direction = rotateClockwise ? -1f : 1f;
             transform.Rotate(Vector3.forward, direction * rotationSpeed * Time.deltaTime);
         }
     }

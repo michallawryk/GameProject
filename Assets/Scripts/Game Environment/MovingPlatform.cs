@@ -23,8 +23,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private bool isActivated = false;
 
     [Header("Efenty dźwiękowe")]
-    [SerializeField] private AudioClip moveSoundClip;
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
 
     private Vector3 target;
     private bool movingToB = true;
@@ -33,9 +32,9 @@ public class MovingPlatform : MonoBehaviour
     private int playersOnPlatform = 0;
 
     void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = moveSoundClip;
+    {   
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
     }
     void Start()
     {  

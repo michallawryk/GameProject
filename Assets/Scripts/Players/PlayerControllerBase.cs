@@ -27,7 +27,7 @@ public abstract class PlayerControllerBase : MonoBehaviour
     protected bool isFacingRight = true;
     protected bool isGrounded;
     protected bool canMove = true;
-    protected float interactDistance = 1.5f;
+    protected float interactDistance = 1f;
 
     [Header("Efekty dŸwiêkowe poruszania")]
     [SerializeField] private AudioSource controllSource;
@@ -93,7 +93,6 @@ public abstract class PlayerControllerBase : MonoBehaviour
                 interactable.Interact();
             }
         }
-        Debug.DrawRay(origin, direction * interactDistance, Color.green, 0.5f);
     }
 
     protected virtual bool IsGrounded()

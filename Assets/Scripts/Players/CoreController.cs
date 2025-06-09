@@ -17,12 +17,6 @@ public class CoreController : PlayerControllerBase
 
     protected override void Interact(InputAction.CallbackContext context)
     {
-        if (!canMagnet)
-        {
-            base.Interact(context);
-            return;
-        }
-
         if (grabbedBox != null)
         {
             // Przywróæ kolizjê z odpuszczan¹ skrzyni¹
@@ -43,6 +37,7 @@ public class CoreController : PlayerControllerBase
         if (TryClimbWall())
             return;
 
+        base.Interact(context);
     }
 
     public void IgnoreCoreCollision(Collider2D coreCol, bool ignore)
@@ -98,9 +93,16 @@ public class CoreController : PlayerControllerBase
             rb.linearVelocity = new Vector2(_moveDirection.x * moveSpeed, rb.linearVelocity.y);
         }
         base.FixedUpdate();
+
         if (grabbedBox != null)
         {
             grabbedBox.MoveTo(transform, isFacingRight);
+
+            // Jeœli postaæ spada (velocity.y < -0.1) lub nie stoi na ziemi (nie jest isGrounded)
+            if (rb.linearVelocity.y < -0.1f || !isGrounded)
+            {
+                ReleaseBox();
+            }
         }
     }
 
@@ -196,11 +198,7 @@ public class CoreController : PlayerControllerBase
 
         yield return new WaitForSeconds(delay); // Czekaj okreœlony czas
 
-        canMagnet = false;
-        StopClimbing();
-        ReleaseBox();
-
-        magnetCoroutine = null;
+        TurnOffMagnetize();
     }
 
     private void HandleMagnetizeAudio()
@@ -220,5 +218,14 @@ public class CoreController : PlayerControllerBase
                 magnetSound.Stop();
             }
         }
+    }
+
+    public void TurnOffMagnetize()
+    {
+        canMagnet = false;
+        StopClimbing();
+        ReleaseBox();
+
+        magnetCoroutine = null;
     }
 }

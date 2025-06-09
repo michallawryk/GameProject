@@ -50,12 +50,6 @@ public class VoltController : PlayerControllerBase
 
     protected override void Interact(InputAction.CallbackContext context)
     {
-        if (!IsCharged)
-        {
-            base.Interact(context);
-            return;
-        }
-
         Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
         Vector2 origin = transform.position;
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, interactDistance, LayerMask.GetMask("Interactables"));
@@ -65,9 +59,11 @@ public class VoltController : PlayerControllerBase
             if (interactable != null)
             {
                 interactable.Interact(this);
+                return;
             }
         }
-        Debug.DrawRay(origin, direction * interactDistance, Color.green, 0.5f);
+
+        base.Interact(context);
     }
 
     protected override void Update()
@@ -110,7 +106,14 @@ public class VoltController : PlayerControllerBase
 
         yield return new WaitForSeconds(delay);
 
+        TurnOffCharge();
+    }
+
+    public void TurnOffCharge()
+    {
         IsCharged = false;
         ExitPanelControl();
+
+        chargeCoroutine = null;
     }
 }
