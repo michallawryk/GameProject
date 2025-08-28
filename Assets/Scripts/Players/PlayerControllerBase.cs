@@ -29,6 +29,11 @@ public abstract class PlayerControllerBase : MonoBehaviour
     protected bool canMove = true;
     protected float interactDistance = 1f;
 
+    private MovingPlatform groundedPlatform;
+    private Vector2 platformVelocity;
+    private readonly Collider2D[] _groundHits = new Collider2D[4];
+    private ContactFilter2D _groundFilter;
+
     [Header("Efekty dŸwiêkowe poruszania")]
     [SerializeField] private AudioSource controllSource;
     [SerializeField] private AudioClip walkClip;
@@ -38,6 +43,11 @@ public abstract class PlayerControllerBase : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        _groundFilter = new ContactFilter2D();
+        _groundFilter.SetLayerMask(groundLayer);
+        _groundFilter.useLayerMask = true;
+        _groundFilter.useTriggers = false;
     }
 
     protected virtual void OnEnable()
@@ -56,7 +66,6 @@ public abstract class PlayerControllerBase : MonoBehaviour
     {
         if (!canMove) return;
         _moveDirection = move.action.ReadValue<Vector2>();
-        isGrounded = IsGrounded();
         Flip();
         if (animator != null)
         {
@@ -68,7 +77,20 @@ public abstract class PlayerControllerBase : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         if (!canMove) return;
-        rb.linearVelocity = new Vector2(_moveDirection.x * moveSpeed, rb.linearVelocity.y);
+
+        isGrounded = IsGrounded();
+
+        if (isGrounded)
+            SamplePlatformVelocity();
+        else
+        {
+            groundedPlatform = null;
+            platformVelocity = Vector2.zero;
+        }
+
+        float sumHorizontalVelocity = (_moveDirection.x * moveSpeed) + platformVelocity.x;
+        rb.linearVelocity = new Vector2(sumHorizontalVelocity, rb.linearVelocity.y);
+
     }
 
     protected virtual void Jump(InputAction.CallbackContext obj)
@@ -124,6 +146,43 @@ public abstract class PlayerControllerBase : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
+        }
+    }
+
+    private void SamplePlatformVelocity()
+    {
+        groundedPlatform = null;
+        platformVelocity = Vector2.zero;
+
+        // Sonda tylko gdy stoimy na czymœ
+        var hitCount = Physics2D.OverlapBox(
+            groundCheckPoint.position,
+            groundCheckSize,
+            0f,
+            _groundFilter,
+            _groundHits
+        );
+
+        for (int i = 0; i < hitCount; i++)
+        {
+            var col = _groundHits[i];
+            if (!col) continue;
+
+            // Najpierw sprawdŸ Rigidbody2D na colliderze
+            if (col.attachedRigidbody && col.attachedRigidbody.TryGetComponent(out MovingPlatform mp))
+            {
+                groundedPlatform = mp;
+                platformVelocity = mp.Velocity; // <-- to doda prêdkoœæ platformy
+                return;
+            }
+
+            // Albo na rodzicu (gdy collider jest dzieckiem obiektu platformy)
+            if (col.TryGetComponent(out MovingPlatform mp2))
+            {
+                groundedPlatform = mp2;
+                platformVelocity = mp2.Velocity;
+                return;
+            }
         }
     }
 

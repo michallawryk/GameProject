@@ -4,7 +4,9 @@ using System.Collections;
 
 public class CoreController : PlayerControllerBase
 {
-    [SerializeField] public bool canMagnet { get; private set; } = false;
+    [SerializeField] private bool canMagnet;
+    public bool CanMagnet => canMagnet;
+
     [Header("Ikona")]
     [SerializeField] private GameObject magnetIcon;
 

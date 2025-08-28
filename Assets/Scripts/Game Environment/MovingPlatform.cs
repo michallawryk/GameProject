@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovingPlatform : MonoBehaviour
 {
     public enum PlatformMode
@@ -15,102 +15,190 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private Transform pointB;
 
     [Header("Parametry ruchu")]
-    [SerializeField] private float speed = 2f;
-    [SerializeField] private float waitTime = 0.5f; // czas pauzy na końcach (tylko tryb 1 i 3)
+    [SerializeField, Min(0.01f)] private float speed = 2.5f;
+    [SerializeField, Min(0.001f)] private float arriveEpsilon = 0.02f; // czas pauzy na końcach (tylko tryb 1 i 3)
 
-    [Header("Tryb pracy platformy")]
+    [Header("Tryb pracy")]
     [SerializeField] private PlatformMode mode = PlatformMode.LoopBetweenPoints;
-    [SerializeField] private bool isActivated = false;
+    [SerializeField] private bool isActivated = false; // wykorzystywane w trybach 1 i 2
 
-    [Header("Efenty dźwiękowe")]
-    [SerializeField] private AudioSource audioSource;
+    [Header("Opóźnienia")]
+    [SerializeField, Min(0f)] private float loopEndpointDelay = 0.5f;
+    [SerializeField, Min(0f)] private float dualDeactivateDelay = 0.75f;
 
-    private Vector3 target;
+    private float loopWaitTimer = 0f;
+    private bool waitingAtEnd = false;
+
+    private float dualWaitTimer = 0f;
+    private bool dualDebouncedActivate = false;
+
+    private Rigidbody2D rb;
+    private Vector2 currentTarget;
     private bool movingToB = true;
-    private float waitTimer = 0f;
-
     private int playersOnPlatform = 0;
 
-    void Awake()
-    {   
-        if (audioSource == null)
-            audioSource = GetComponent<AudioSource>();
-    }
-    void Start()
-    {  
-        transform.position = pointA.position;
-        target = pointB.position;
+    private Vector2 lastPos;
+    public Vector2 Velocity { get; private set; }
+
+    private void Reset()
+    {
+        //Automatycznie ustaw Kinetic i wyłącz grawitację
+        rb = GetComponent<Rigidbody2D>();
+        ConfigureRigidbody();
     }
 
-    void Update()
-    { 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        ConfigureRigidbody();
+
+        if (!ValidatePoints()) return;
+        InitializeLoopTarget();
+        lastPos = rb.position;
+    }
+
+    private bool ValidatePoints()
+    {
+        if (pointA == null || pointB == null)
+        {
+            Debug.LogError($"{name}: Ustaw pointA i pointB.");
+            enabled = false;
+            return false;
+        }
+        if ((pointA.position - pointB.position).sqrMagnitude < 1e-6f)
+            Debug.LogWarning($"{name}: pointA i pointB są bardzo blisko — ruch może być niewidoczny.");
+        return true;
+    }
+
+    private void OnValidate()
+    {
+        if (Application.isPlaying) return;
+        rb = GetComponent<Rigidbody2D>();
+        if (rb) ConfigureRigidbody();
+
+        // jeśli mamy punkty, ustaw domyślny target pętli
+        if (pointA && pointB) currentTarget = pointB.position;
+    }
+
+    private void ConfigureRigidbody()
+    {
+        // Jedno miejsce z ustawieniami fizyki:
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.gravityScale = 0f;
+        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+    }
+
+    private void InitializeLoopTarget()
+    {
+        movingToB = true;
+        currentTarget = pointB.position;
+    }
+
+    private void FixedUpdate()
+    {
+        if (!enabled) return;
+
         switch (mode)
         {
             case PlatformMode.LoopBetweenPoints:
-                if (isActivated)
-                    MoveLoop();
+                if (!isActivated) break;
+                LoopBetweenAandB();
                 break;
 
             case PlatformMode.OneWayAndReturn:
-                MoveOneWay();
+                MoveTowards(isActivated ? pointB.position : pointA.position);
                 break;
 
             case PlatformMode.DualPlayerActivate:
-                // NOWA LOGIKA: 2 graczy → do B, mniej niż 2 → wraca do A
-                target = (playersOnPlatform >= 2) ? pointB.position : pointA.position;
-                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-                break;
+                {
+                    bool rawActive = playersOnPlatform >= 2;
+
+                    if (rawActive)
+                    {
+                        dualDebouncedActivate = true;
+                        dualWaitTimer = 0f;
+                    }
+                    else
+                    {
+                        if (dualDebouncedActivate)
+                        {
+                            if (dualWaitTimer <= 0f)
+                                dualWaitTimer = dualDeactivateDelay;
+
+                            dualWaitTimer -= Time.fixedTime;
+
+                            if (dualWaitTimer <= 0f)
+                                dualDebouncedActivate = false;
+                        }
+                        else
+                        {
+                            dualWaitTimer = 0f;
+                        }
+                    }
+                    MoveTowards(playersOnPlatform >= 2 ? pointB.position : pointA.position);
+                    break;
+                }
         }
-        // Logika audio - dźwięk tylko podczas ruchu
-        bool shouldPlaySound = Vector3.Distance(transform.position, target) > 0.01f;
-        if (shouldPlaySound)
-        {
-            if (!audioSource.isPlaying)
-                audioSource.Play();
-        }
-        else
-        {
-            if (audioSource.isPlaying)
-                audioSource.Pause();
-        }
+
+        var pos = rb.position;
+        Velocity = (pos - lastPos) / Time.fixedDeltaTime;
+        lastPos = pos;
     }
 
-    void MoveLoop()
+    private void LoopBetweenAandB()
     {
-        if (waitTimer > 0)
+        if (waitingAtEnd)
         {
-            waitTimer -= Time.deltaTime;
+            loopWaitTimer -= Time.fixedDeltaTime;
+            if (loopWaitTimer <= 0f)
+            {
+                waitingAtEnd = false;
+
+                movingToB = !movingToB;
+                currentTarget = movingToB ? pointB.position : pointA.position;
+            }
             return;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        MoveTowards(currentTarget);
 
-        if (Vector3.Distance(transform.position, target) < 0.01f)
+        if (HasArrived(currentTarget))
         {
-            // Zamiana kierunku po dotarciu do punktu
-            movingToB = !movingToB;
-            target = movingToB ? pointB.position : pointA.position;
-            waitTimer = waitTime;
+            if (loopEndpointDelay > 0f)
+            {
+                waitingAtEnd = true;
+                loopWaitTimer = loopEndpointDelay;
+            }
+            else
+            {
+                movingToB = !movingToB;
+                currentTarget = movingToB ? pointB.position : pointA.position;
+            }
         }
     }
 
-    void MoveOneWay()
+    private void MoveTowards(Vector2 target)
     {
-        if (isActivated)
-            target = pointB.position;
-        else
-            target = pointA.position;
-
-        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        if (speed <= 0f) return;
+        var newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+        rb.MovePosition(newPos);   
     }
 
+    private bool HasArrived(Vector2 target) =>
+        Vector2.SqrMagnitude(rb.position - target) <= (arriveEpsilon * arriveEpsilon);
+
+    // Sterowanie z zewnątrz (dźwignie, gniazda, panel)
+    public void Activate()      => isActivated = true; 
+    public void Deactivate()    => isActivated = false;
+    
     // Parenting gracza do platformy, żeby przewoziła go poprawnie
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Volt") || collision.gameObject.CompareTag("Core"))
         {
+            playersOnPlatform++;            
             collision.transform.SetParent(transform);
-            playersOnPlatform++;
         }
     }
 
@@ -118,14 +206,12 @@ public class MovingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Volt") || collision.gameObject.CompareTag("Core"))
         {
-            collision.transform.SetParent(null);
             playersOnPlatform = Mathf.Max(0, playersOnPlatform - 1);
+            if (collision.transform.parent == transform)
+                collision.transform.SetParent(null);
+ 
         }
     }
-
-    // --- PODPINASZ TE METODY DO UNITYEVENTÓW (przyciski, panele, płytki) ---
-    public void Activate() { isActivated = true; }
-    public void Deactivate() { isActivated = false; }
 
     // Jeśli chcesz mieć podgląd na platformę w edytorze
     private void OnDrawGizmos()
@@ -134,46 +220,8 @@ public class MovingPlatform : MonoBehaviour
         {
             Gizmos.color = Color.green;
             Gizmos.DrawLine(pointA.position, pointB.position);
-            Gizmos.DrawSphere(pointA.position, 0.1f);
-            Gizmos.DrawSphere(pointB.position, 0.1f);
+            Gizmos.DrawWireSphere(pointA.position, 0.06f);
+            Gizmos.DrawWireSphere(pointB.position, 0.06f);
         }
     }
-
-    //[SerializeField] private Transform pointA;
-    //[SerializeField] private Transform pointB;
-    //[SerializeField] private float speed = 2f;
-
-    //[SerializeField] private bool isActivated = false;
-    //private Vector3 target;
-    //private bool movingToB = true;
-
-    //void Start()
-    //{
-    //    target = pointB.position;
-    //    transform.position = pointA.position;
-    //}
-
-    //void Update()
-    //{
-    //    if (isActivated)
-    //        MovePlatform();
-    //}
-
-    //void MovePlatform()
-    //{
-    //    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-    //    if (Vector3.Distance(transform.position, target) < 0.01f)
-    //    {
-    //        if (movingToB)
-    //            target = pointA.position;
-    //        else
-    //            target = pointB.position;
-    //        movingToB = !movingToB;
-    //    }
-    //}
-
-    //// --- PODPINASZ TE METODY DO UNITYEVENTÓW ---
-    //public void Activate() { isActivated = true; }
-    //public void Deactivate() { isActivated = false; }
 }

@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 public class VoltController : PlayerControllerBase
 {
     [SerializeField] private bool hasDoubleJump = true;
-    [SerializeField] public bool IsCharged { get; private set; } = false;
+    [SerializeField] private bool isCharged;
+    public bool IsCharged => isCharged;
 
     [Header("Ikona")]
     [SerializeField] private GameObject boltIcon;
@@ -70,7 +71,7 @@ public class VoltController : PlayerControllerBase
     {
         if (boltIcon != null)
         {
-            if (IsCharged)
+            if (isCharged)
             {
                 boltIcon.SetActive(true);
             }
@@ -102,7 +103,7 @@ public class VoltController : PlayerControllerBase
 
     IEnumerator DelayCharge(float delay)
     {
-        IsCharged = true;
+        isCharged = true;
 
         yield return new WaitForSeconds(delay);
 
@@ -111,7 +112,7 @@ public class VoltController : PlayerControllerBase
 
     public void TurnOffCharge()
     {
-        IsCharged = false;
+        isCharged = false;
         ExitPanelControl();
 
         chargeCoroutine = null;
