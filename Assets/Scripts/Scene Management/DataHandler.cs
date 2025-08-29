@@ -102,7 +102,7 @@ public class DataHandler : MonoBehaviour
 
     public void MarkCurrentLevelCompletedAndSave()
     {
-        int buildIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        int buildIndex = SceneManager.GetActiveScene().buildIndex;
         MarkLevelCompletedByBuildIndex(buildIndex);
     }
 

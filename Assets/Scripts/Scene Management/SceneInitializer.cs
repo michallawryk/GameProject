@@ -16,6 +16,6 @@ public class SceneInitializer : MonoBehaviour
         var coreSpawn = GameObject.Find("CoreSpawnPoint").transform;
         var core = Instantiate(corePrefab, coreSpawn.position, Quaternion.identity);
 
-        //DataHandler.Instance.GameData.currentSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        DataHandler.Instance.GameData.currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 }

@@ -21,19 +21,21 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
+    m_path: Assets/Scenes/Main Menu.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/Lobby.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Level 1.unity
+    m_path: Assets/Scenes/Levels/Level 1.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Level 2.unity
+    m_path: Assets/Scenes/Levels/Level 2.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Level 3.unity
+    m_path: Assets/Scenes/Levels/Level 3.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Level 4.unity
+    m_path: Assets/Scenes/Levels/Level 4.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Level 5.unity
+    m_path: Assets/Scenes/Levels/Level 5.unity
   - m_enabled: 1
-    m_path: Assets/Scenes/Level 6.unity
+    m_path: Assets/Scenes/Levels/Level 6.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Ending.unity
   m_ScriptingDefines: []

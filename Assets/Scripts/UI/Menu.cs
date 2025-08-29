@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
 
     public void OnContinueButton()
     {
-        SceneManager.LoadSceneAsync(DataHandler.Instance.GameData.currentSceneIndex - 1);
+        SceneManager.LoadSceneAsync(DataHandler.Instance.GameData.currentSceneIndex);
     }
 
     public void OnControlButton()

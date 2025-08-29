@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.31, y: -3.51, z: 4}
-  m_LocalScale: {x: 0.3871462, y: 0.31980836, z: 1}
+  m_LocalScale: {x: 0.54455984, y: 0.44984245, z: 1.4066}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 480481093883218617}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d981e4a3df8de34e85a91fd38ce2a86, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5a726765f28858b4dad87be585f1e63b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -170,4 +170,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8738196ebb1a75743a02bea0a7f529a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 7725689066098964415}
   sceneToLoad: Lobby
