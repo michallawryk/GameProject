@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneInitializer : MonoBehaviour
 {
@@ -14,5 +15,7 @@ public class SceneInitializer : MonoBehaviour
         // Gracz 2
         var coreSpawn = GameObject.Find("CoreSpawnPoint").transform;
         var core = Instantiate(corePrefab, coreSpawn.position, Quaternion.identity);
+
+        //DataHandler.Instance.GameData.currentSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
     }
 }

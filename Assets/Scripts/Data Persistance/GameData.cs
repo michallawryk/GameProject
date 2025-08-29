@@ -1,11 +1,12 @@
+[System.Serializable]
 public class GameData
 {
-    private bool Level1;
-    private bool Level2;
-    private bool Level3;
-    private bool Level4;
-    private bool Level5;
-    private bool Level6;
+    public string version;
+    public bool[] levelsCompleted;
+    public int currentSceneIndex;
 
-    private string CurrentScene;
+    public GameData(string version = "1.0")
+    {
+        this.version = version;
+    }
 }

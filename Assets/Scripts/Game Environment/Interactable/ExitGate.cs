@@ -13,10 +13,10 @@ public class ExitGate : MonoBehaviour, IInteractable
     // Lista lub zbiór obiektów Player, które aktualnie stoj¹ w triggerze.
     private HashSet<GameObject> _playersInside = new HashSet<GameObject>();
 
-    private void Start()
+    private void Awake()
     {
         // SprawdŸ stan po za³adowaniu sceny
-        if (GameManager.Instance != null && GameManager.Instance.AreAllLevelsCompleted())
+        if (DataHandler.Instance != null && DataHandler.Instance.AreAllLevelsCompleted())
         {
             OpenGate();
         }

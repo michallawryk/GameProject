@@ -8,9 +8,9 @@ public class LevelEndLever : LeverInteractable
     protected override void Awake()
     {
         base.Awake();
-        if (GameManager.Instance != null && levelIndex >= 0 && levelIndex < GameManager.Instance.LevelCompleted.Length)
+        if (DataHandler.Instance != null && levelIndex >= 0 && levelIndex < DataHandler.Instance.GameData.levelsCompleted.Length)
         {
-            isOn = GameManager.Instance.LevelCompleted[levelIndex];               // Ustaw stan dŸwigni
+            isOn = DataHandler.Instance.GameData.levelsCompleted[levelIndex];               // Ustaw stan dŸwigni
             Animate();
         }
     }
@@ -18,12 +18,7 @@ public class LevelEndLever : LeverInteractable
     public override void Interact(VoltController player)
     {
         base.Interact(null);
-        
-        // Ustaw w GameManagerze LevelCompleted[levelIndex] = true
-        if (GameManager.Instance != null && levelIndex >= 0 && levelIndex < GameManager.Instance.LevelCompleted.Length)
-        {
-            GameManager.Instance.LevelCompleted[levelIndex] = isOn;
-            Debug.Log($"Poziom {levelIndex} ukoñczony!");
-        }
+
+        DataHandler.Instance.MarkCurrentLevelCompletedAndSave();
     }
 }
