@@ -40,7 +40,6 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // sprawdzamy, czy warstwa obiektu nale¿y do activatorLayers
         if (((1 << other.gameObject.layer) & activatorLayers) != 0)
         {
             if (singleUse && wasActivatedOnce)

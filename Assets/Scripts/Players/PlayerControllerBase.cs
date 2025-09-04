@@ -65,7 +65,6 @@ public abstract class PlayerControllerBase : MonoBehaviour
     protected virtual void Update()
     {
         if (!canMove) return;
-        _moveDirection = move.action.ReadValue<Vector2>();
         Flip();
         if (animator != null)
         {
@@ -77,6 +76,7 @@ public abstract class PlayerControllerBase : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         if (!canMove) return;
+        _moveDirection = move.action.ReadValue<Vector2>();
 
         isGrounded = IsGrounded();
 

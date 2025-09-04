@@ -2,16 +2,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 
-public class CoreController : PlayerControllerBase
+public sealed class CoreController : PlayerControllerBase
 {
     [SerializeField] private bool canMagnet;
     public bool CanMagnet => canMagnet;
 
     [Header("Ikona")]
     [SerializeField] private GameObject magnetIcon;
-
-    [Header("DŸwiek magnesu")]
-    [SerializeField] private AudioSource magnetSound;
 
     private Coroutine magnetCoroutine;
     private MagneticBox grabbedBox = null;
@@ -21,14 +18,12 @@ public class CoreController : PlayerControllerBase
     {
         if (grabbedBox != null)
         {
-            // Przywróæ kolizjê z odpuszczan¹ skrzyni¹
             ReleaseBox();
             return;
         }
 
         if (isClimbing)
         {
-            // jesteœ ju¿ na œcianie – puszczasz j¹
             StopClimbing();
             return;
         }
@@ -42,16 +37,33 @@ public class CoreController : PlayerControllerBase
         base.Interact(context);
     }
 
-    public void IgnoreCoreCollision(Collider2D coreCol, bool ignore)
+    IEnumerator DelayedMagnetize(float delay)
     {
-        Collider2D boxCol = GetComponent<Collider2D>();
-        Physics2D.IgnoreCollision(coreCol, boxCol, ignore);
+        canMagnet = true;
+
+        yield return new WaitForSeconds(delay); // Czekaj okreœlony czas
+
+        TurnOffMagnetize();
+    }
+
+    public void GetMagnetized(float time)
+    {
+        if (magnetCoroutine != null)
+            StopCoroutine(magnetCoroutine);
+
+        magnetCoroutine = StartCoroutine(DelayedMagnetize(time));
+    }
+    public void TurnOffMagnetize()
+    {
+        canMagnet = false;
+        StopClimbing();
+        ReleaseBox();
+
+        magnetCoroutine = null;
     }
 
     protected override void Update()
     {
-        HandleMagnetizeAudio();
-
         if (magnetIcon != null)
         {
             if (canMagnet)
@@ -64,22 +76,11 @@ public class CoreController : PlayerControllerBase
             }
         }
 
-        // Tu mo¿esz dodaæ obs³ugê magnesu lub innych zdolnoœci Core
         if (isClimbing)
         {
             Vector2 input = move.action.ReadValue<Vector2>();
-
-            // Tylko pionowy ruch na œcianie (mo¿esz ograniczyæ poziomy jeœli chcesz)
+            
             rb.linearVelocity = new Vector2(0, input.y * moveSpeed);
-
-            // (opcjonalnie: animacja wspinania)
-        }
-        else
-        {
-            // Normalne sterowanie
-            // Ruch lewo/prawo: input.x
-            // Skok na ground: input.y > 0 && isGrounded
-            // ...
         }
         base.Update();
     }
@@ -130,7 +131,6 @@ public class CoreController : PlayerControllerBase
             grabbedBox = boxCol.GetComponent<MagneticBox>();
             if (grabbedBox != null)
             {
-                // Zignoruj kolizjê z t¹ skrzyni¹
                 Collider2D coreCol = GetComponent<Collider2D>();
                 Collider2D boxCollider = grabbedBox.GetComponent<Collider2D>();
                 if (coreCol != null && boxCollider != null)
@@ -138,7 +138,6 @@ public class CoreController : PlayerControllerBase
                     Physics2D.IgnoreCollision(coreCol, boxCollider, true);
                     grabbedBox.StartGrabbing(this);
                     canJump = false;
-                    // (opcjonalnie) dŸwiêk, animacja itp.
                     return true;
                 }
             }
@@ -172,7 +171,6 @@ public class CoreController : PlayerControllerBase
             canJump = false;
             rb.gravityScale = 0f; // wy³¹cz grawitacjê
             rb.linearVelocity = Vector2.zero;
-            // (opcjonalnie: animacja, dŸwiêk)
             return true;
         }
         return false;
@@ -183,51 +181,5 @@ public class CoreController : PlayerControllerBase
         isClimbing = false;
         canJump = true;
         rb.gravityScale = 10f; // domyœlna grawitacja
-                              // opcjonalnie: animacja/dŸwiêk
-    }
-
-    public void GetMagnetized(float time)
-    {
-        if (magnetCoroutine != null)
-            StopCoroutine(magnetCoroutine);
-
-        magnetCoroutine = StartCoroutine(DelayedMagnetize(time));
-    }
-
-    IEnumerator DelayedMagnetize(float delay)
-    {
-        canMagnet = true;
-
-        yield return new WaitForSeconds(delay); // Czekaj okreœlony czas
-
-        TurnOffMagnetize();
-    }
-
-    private void HandleMagnetizeAudio()
-    {
-        if (canMagnet)
-        {
-            if (!magnetSound.isPlaying)
-            {
-                magnetSound.Play();
-            }
-        }
-        else
-        {
-            // Zatrzymaj tylko jeœli ten dŸwiêk gra
-            if (magnetSound.isPlaying)
-            {
-                magnetSound.Stop();
-            }
-        }
-    }
-
-    public void TurnOffMagnetize()
-    {
-        canMagnet = false;
-        StopClimbing();
-        ReleaseBox();
-
-        magnetCoroutine = null;
     }
 }

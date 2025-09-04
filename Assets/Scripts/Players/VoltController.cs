@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class VoltController : PlayerControllerBase
+public sealed class VoltController : PlayerControllerBase
 {
     [SerializeField] private bool hasDoubleJump = true;
     [SerializeField] private bool isCharged;
@@ -10,9 +10,6 @@ public class VoltController : PlayerControllerBase
 
     [Header("Ikona")]
     [SerializeField] private GameObject boltIcon;
-
-    [Header("DŸwiek pr¹du")]
-    [SerializeField] private AudioSource boltSound;
 
     private Coroutine chargeCoroutine;
     private ControlPanel activePanel = null;
