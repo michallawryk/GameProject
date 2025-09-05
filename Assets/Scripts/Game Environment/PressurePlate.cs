@@ -31,13 +31,6 @@ public class PressurePlate : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void Reset()
-    {
-        // upewnij siê, ¿e collider jest triggerem
-        var bc = GetComponent<BoxCollider2D>();
-        bc.isTrigger = true;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (((1 << other.gameObject.layer) & activatorLayers) != 0)

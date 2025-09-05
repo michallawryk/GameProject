@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -12,8 +11,6 @@ public class PauseManager : MonoBehaviour
 
     [Header("Input")]
     [SerializeField] private InputActionReference pauseAction;
-
-    private string _prevActionMap;
 
     private void Awake()
     {
@@ -56,7 +53,7 @@ public class PauseManager : MonoBehaviour
 
         Time.timeScale = 0f;                          
 
-        if (pauseMenu != null) pauseMenu.SetActive(true);    // poka¿ UI
+        if (pauseMenu != null) pauseMenu.SetActive(true);
     }
 
     public void Resume()
@@ -73,7 +70,6 @@ public class PauseManager : MonoBehaviour
         if (pauseMenu != null) pauseMenu.SetActive(false);
     }
 
-    // --- Handlery pod przyciski w menu pauzy ---
     public void OnResumeButton() => Resume();
 
     public void OnRestartButton()

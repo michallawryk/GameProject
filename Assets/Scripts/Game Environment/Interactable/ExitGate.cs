@@ -7,23 +7,32 @@ public class ExitGate : MonoBehaviour, IInteractable
     [Header("Scene to load")]
     [SerializeField] private string sceneToLoad;
 
-    public Animator animator; // lub SpriteRenderer, jeœli u¿ywasz sprite'ów
+    public Animator animator; 
     private bool isOpen = false;
 
-    // Lista lub zbiór obiektów Player, które aktualnie stoj¹ w triggerze.
     private HashSet<GameObject> _playersInside = new HashSet<GameObject>();
+
+    [SerializeField] private List<LevelBulb> bulbs;
 
     private void Awake()
     {
-        // SprawdŸ stan po za³adowaniu sceny
-        if (DataHandler.Instance != null && DataHandler.Instance.AreAllLevelsCompleted())
+        bool[] levelCompleted = DataHandler.Instance.GetCompletedLevels();
+
+        for (int i = 0; i < levelCompleted.Length; i++)
         {
-            OpenGate();
+            bulbs[i].SetState(levelCompleted[i]);
         }
-        else
+
+        foreach (var level in levelCompleted)
         {
-            CloseGate();
+            if (!level)
+            {
+                CloseGate();
+                return;
+            }
         }
+
+        OpenGate();
     }
 
     public void OpenGate()

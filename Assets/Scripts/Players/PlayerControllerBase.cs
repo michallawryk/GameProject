@@ -29,16 +29,9 @@ public abstract class PlayerControllerBase : MonoBehaviour
     protected bool canMove = true;
     protected float interactDistance = 1f;
 
-    private MovingPlatform groundedPlatform;
     private Vector2 platformVelocity;
     private readonly Collider2D[] _groundHits = new Collider2D[4];
     private ContactFilter2D _groundFilter;
-
-    [Header("Efekty düwiÍkowe poruszania")]
-    [SerializeField] private AudioSource controllSource;
-    [SerializeField] private AudioClip walkClip;
-    [SerializeField] private AudioClip jumpClip;
-    [SerializeField] private AudioClip interactClip;
 
     protected virtual void Awake()
     {
@@ -84,7 +77,6 @@ public abstract class PlayerControllerBase : MonoBehaviour
             SamplePlatformVelocity();
         else
         {
-            groundedPlatform = null;
             platformVelocity = Vector2.zero;
         }
 
@@ -151,7 +143,6 @@ public abstract class PlayerControllerBase : MonoBehaviour
 
     private void SamplePlatformVelocity()
     {
-        groundedPlatform = null;
         platformVelocity = Vector2.zero;
 
         // Sonda tylko gdy stoimy na czymú
@@ -168,18 +159,14 @@ public abstract class PlayerControllerBase : MonoBehaviour
             var col = _groundHits[i];
             if (!col) continue;
 
-            // Najpierw sprawdü Rigidbody2D na colliderze
             if (col.attachedRigidbody && col.attachedRigidbody.TryGetComponent(out MovingPlatform mp))
             {
-                groundedPlatform = mp;
-                platformVelocity = mp.Velocity; // <-- to doda prÍdkoúÊ platformy
+                platformVelocity = mp.Velocity; 
                 return;
             }
 
-            // Albo na rodzicu (gdy collider jest dzieckiem obiektu platformy)
             if (col.TryGetComponent(out MovingPlatform mp2))
             {
-                groundedPlatform = mp2;
                 platformVelocity = mp2.Velocity;
                 return;
             }

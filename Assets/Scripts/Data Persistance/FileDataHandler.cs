@@ -6,12 +6,12 @@ public class FileDataHandler
 {
     private readonly string _path;
 
+    public bool Exists() => File.Exists(_path);
+
     public FileDataHandler(string filename = "data.json")
     {
         _path = Path.Combine(Application.persistentDataPath, filename);
     }
-
-    public bool Exists() => File.Exists(_path);
 
     public void Save(GameData data)
     {

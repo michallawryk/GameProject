@@ -7,7 +7,7 @@ public class MovingPlatform : MonoBehaviour
     {
         LoopBetweenPoints,        // Tryb 1: Ciągły ruch A<->B po aktywacji
         OneWayAndReturn,          // Tryb 2: Aktywacja -> do B, dezaktywacja -> do A
-        DualPlayerActivate        // Tryb 3: Ruch jak w trybie 1, jeśli na platformie stoi 2 graczy
+        DualPlayerActivate        // Tryb 3: Ruch jak w trybie 2, jeśli na platformie stoi 2 graczy
     }
 
     [Header("Punkty ruchu")]
@@ -16,11 +16,11 @@ public class MovingPlatform : MonoBehaviour
 
     [Header("Parametry ruchu")]
     [SerializeField, Min(0.01f)] private float speed = 2.5f;
-    [SerializeField, Min(0.001f)] private float arriveEpsilon = 0.02f; // czas pauzy na końcach (tylko tryb 1 i 3)
+    [SerializeField, Min(0.001f)] private float arriveEpsilon = 0.02f;
 
     [Header("Tryb pracy")]
     [SerializeField] private PlatformMode mode = PlatformMode.LoopBetweenPoints;
-    [SerializeField] private bool isActivated = false; // wykorzystywane w trybach 1 i 2
+    [SerializeField] private bool isActivated = false;
 
     [Header("Opóźnienia")]
     [SerializeField, Min(0f)] private float loopEndpointDelay = 0.5f;
@@ -73,16 +73,14 @@ public class MovingPlatform : MonoBehaviour
     private void OnValidate()
     {
         if (Application.isPlaying) return;
+
         rb = GetComponent<Rigidbody2D>();
         if (rb) ConfigureRigidbody();
-
-        // jeśli mamy punkty, ustaw domyślny target pętli
         if (pointA && pointB) currentTarget = pointB.position;
     }
 
     private void ConfigureRigidbody()
     {
-        // Jedno miejsce z ustawieniami fizyki:
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.gravityScale = 0f;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -102,43 +100,47 @@ public class MovingPlatform : MonoBehaviour
         switch (mode)
         {
             case PlatformMode.LoopBetweenPoints:
+            { 
                 if (!isActivated) break;
                 LoopBetweenAandB();
                 break;
+            }
 
             case PlatformMode.OneWayAndReturn:
+            {                
                 MoveTowards(isActivated ? pointB.position : pointA.position);
                 break;
+            }
 
             case PlatformMode.DualPlayerActivate:
-                {
-                    bool rawActive = playersOnPlatform >= 2;
+            {
+                bool rawActive = playersOnPlatform >= 2;
 
-                    if (rawActive)
+                if (rawActive)
+                {
+                    dualDebouncedActivate = true;
+                    dualWaitTimer = 0f;
+                }
+                else
+                {
+                    if (dualDebouncedActivate)
                     {
-                        dualDebouncedActivate = true;
-                        dualWaitTimer = 0f;
+                        if (dualWaitTimer <= 0f)
+                            dualWaitTimer = dualDeactivateDelay;
+
+                        dualWaitTimer -= Time.fixedTime;
+
+                        if (dualWaitTimer <= 0f)
+                            dualDebouncedActivate = false;
                     }
                     else
                     {
-                        if (dualDebouncedActivate)
-                        {
-                            if (dualWaitTimer <= 0f)
-                                dualWaitTimer = dualDeactivateDelay;
-
-                            dualWaitTimer -= Time.fixedTime;
-
-                            if (dualWaitTimer <= 0f)
-                                dualDebouncedActivate = false;
-                        }
-                        else
-                        {
-                            dualWaitTimer = 0f;
-                        }
+                        dualWaitTimer = 0f;
                     }
-                    MoveTowards(playersOnPlatform >= 2 ? pointB.position : pointA.position);
-                    break;
                 }
+                MoveTowards(playersOnPlatform >= 2 ? pointB.position : pointA.position);
+                break;
+            }
         }
 
         var pos = rb.position;
@@ -188,11 +190,9 @@ public class MovingPlatform : MonoBehaviour
     private bool HasArrived(Vector2 target) =>
         Vector2.SqrMagnitude(rb.position - target) <= (arriveEpsilon * arriveEpsilon);
 
-    // Sterowanie z zewnątrz (dźwignie, gniazda, panel)
     public void Activate()      => isActivated = true; 
     public void Deactivate()    => isActivated = false;
     
-    // Parenting gracza do platformy, żeby przewoziła go poprawnie
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Volt") || collision.gameObject.CompareTag("Core"))
@@ -213,7 +213,6 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    // Jeśli chcesz mieć podgląd na platformę w edytorze
     private void OnDrawGizmos()
     {
         if (pointA && pointB)

@@ -19,6 +19,11 @@ public class FanRotor : MonoBehaviour
         isRotating = false;
     }
 
+    public void ChangeDirection()
+    {
+        rotateClockwise = !rotateClockwise;
+    }
+
     private void Update()
     {
         if (isRotating)

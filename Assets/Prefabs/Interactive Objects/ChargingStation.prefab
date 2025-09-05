@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8893f5746af1249bc0ca2d89e64728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargedTime: 5
+  chargedTime: 20
   isActive: 1
   activeIcon: {fileID: 1045913158442597472}
   inactiveIcon: {fileID: 5038689602598815600}

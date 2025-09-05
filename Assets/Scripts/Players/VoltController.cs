@@ -34,16 +34,14 @@ public sealed class VoltController : PlayerControllerBase
     {
         activePanel = panel;
         canJump = false;
-        canMove = false; // wy³¹cz sterowanie postaci¹
-                         // (opcjonalnie: animacja, dŸwiêk, zmiana kamery)
+        canMove = false;
     }
 
     public void ExitPanelControl()
     {
         activePanel = null;
         canJump = true;
-        canMove = true; // wróæ do normalnego ruchu
-                        // (opcjonalnie: reset UI/kamery)
+        canMove = true;
     }
 
     protected override void Interact(InputAction.CallbackContext context)
@@ -60,7 +58,6 @@ public sealed class VoltController : PlayerControllerBase
                 return;
             }
         }
-
         base.Interact(context);
     }
 
@@ -80,7 +77,6 @@ public sealed class VoltController : PlayerControllerBase
 
         if (activePanel != null)
         {
-            // Przekazuj input do panelu
             Vector2 input = move.action.ReadValue<Vector2>();
             activePanel.SetPlatformInput(input);
         }

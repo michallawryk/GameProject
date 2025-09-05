@@ -20,6 +20,7 @@ public class DataHandler : MonoBehaviour
     [SerializeField] private GameData _gameData;
 
     public GameData GameData => _gameData;
+
     public bool HasSave => _handler != null && _handler.Exists();
 
     private void Awake()
@@ -115,13 +116,6 @@ public class DataHandler : MonoBehaviour
         SaveNow();
     }
 
-    public bool IsLevelCompletedByBuildIndex(int buildIndex)
-    {
-        if (!IsLevelBuildIndex(buildIndex) || _gameData.levelsCompleted == null) return false;
-        int idx = BuildIndexToLevelArrayIndex(buildIndex);
-        return idx >= 0 && idx < _gameData.levelsCompleted.Length && _gameData.levelsCompleted[idx];
-    }
-
     public void NewGame()
     {
         _gameData = new GameData();
@@ -134,14 +128,11 @@ public class DataHandler : MonoBehaviour
         _handler.Save(_gameData);
     }
 
-    public bool AreAllLevelsCompleted()
+    public bool[] GetCompletedLevels()
     {
-        if (_gameData.levelsCompleted == null) return false;
-        foreach (bool level in _gameData.levelsCompleted)
-        {
-            if (!level)
-                return false;
-        }
-        return true;
+        if (_gameData.levelsCompleted == null) return null;
+        var newArr = new bool[GetLevelCount()];
+        Array.Copy(_gameData.levelsCompleted, newArr, _gameData.levelsCompleted.Length);
+        return newArr; 
     }
 }

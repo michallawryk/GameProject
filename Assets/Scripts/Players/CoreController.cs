@@ -41,7 +41,7 @@ public sealed class CoreController : PlayerControllerBase
     {
         canMagnet = true;
 
-        yield return new WaitForSeconds(delay); // Czekaj okreœlony czas
+        yield return new WaitForSeconds(delay);
 
         TurnOffMagnetize();
     }
