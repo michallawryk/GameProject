@@ -1,1 +1,0 @@
-Obiekty pełniące rolę granic poziomu zostały zorganizowane jako dzieci pustego kontenera Borders. Każda z granic (TopWall, BottomWall, itd.) posiada przypisany tag Ground oraz warstwę Environment, co pozwala na ich wykrywanie w systemie fizyki oraz filtrowanie w logice kolizji i raycastów.
