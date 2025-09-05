@@ -1,1 +1,1 @@
-# GameProject
+# Rusty Friends DEMO
