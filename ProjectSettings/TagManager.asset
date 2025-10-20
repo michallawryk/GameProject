@@ -2,19 +2,32 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Ground
+  - PressurePlate
+  - Lever
+  - Box
+  - MagneticBox
+  - MagneticWall
+  - Goal
+  - Obstacle
+  - Door
+  - Volt
+  - Core
+  - ControlPanel
+  - ElectricBox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Players
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Environment
+  - Interactables
+  - Triggers
+  - Box
   - 
   - 
   - 
@@ -41,3 +54,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  m_RenderingLayers:
+  - Default

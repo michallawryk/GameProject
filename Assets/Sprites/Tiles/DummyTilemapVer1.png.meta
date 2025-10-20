@@ -1,0 +1,1365 @@
+fileFormatVersion: 2
+guid: 4bb16d3cb82c6084fbb39a15915ec57e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1169378259347616067
+    second: DummyTilemapVer1_0
+  - first:
+      213: -3245678753767874682
+    second: DummyTilemapVer1_1
+  - first:
+      213: 7443395321994667956
+    second: DummyTilemapVer1_2
+  - first:
+      213: 332256804964313583
+    second: DummyTilemapVer1_3
+  - first:
+      213: -5580351859404828805
+    second: DummyTilemapVer1_4
+  - first:
+      213: -5451707035315747457
+    second: DummyTilemapVer1_5
+  - first:
+      213: 5839987332700916525
+    second: DummyTilemapVer1_6
+  - first:
+      213: 5564402592785088802
+    second: DummyTilemapVer1_7
+  - first:
+      213: -5649395394642161834
+    second: DummyTilemapVer1_8
+  - first:
+      213: 7318560833078475943
+    second: DummyTilemapVer1_9
+  - first:
+      213: 8628261499999583416
+    second: DummyTilemapVer1_10
+  - first:
+      213: 4153745178091299515
+    second: DummyTilemapVer1_11
+  - first:
+      213: 2797837210884686675
+    second: DummyTilemapVer1_12
+  - first:
+      213: 7964256927719792831
+    second: DummyTilemapVer1_13
+  - first:
+      213: 7610170401725686753
+    second: DummyTilemapVer1_14
+  - first:
+      213: 7815151913823300937
+    second: DummyTilemapVer1_15
+  - first:
+      213: -5135000181821680775
+    second: DummyTilemapVer1_16
+  - first:
+      213: 3628543473110275532
+    second: DummyTilemapVer1_17
+  - first:
+      213: -7927476902921758485
+    second: DummyTilemapVer1_18
+  - first:
+      213: -5250773675360766413
+    second: DummyTilemapVer1_19
+  - first:
+      213: 2802346698948908876
+    second: DummyTilemapVer1_20
+  - first:
+      213: 4069628512478822930
+    second: DummyTilemapVer1_21
+  - first:
+      213: -7393780567487375365
+    second: DummyTilemapVer1_22
+  - first:
+      213: 208281838046018603
+    second: DummyTilemapVer1_23
+  - first:
+      213: -498617542557602339
+    second: DummyTilemapVer1_24
+  - first:
+      213: 6038160535032755273
+    second: DummyTilemapVer1_25
+  - first:
+      213: 8152055552321111481
+    second: DummyTilemapVer1_26
+  - first:
+      213: 7606143341388529404
+    second: DummyTilemapVer1_27
+  - first:
+      213: -2153404855986115927
+    second: DummyTilemapVer1_28
+  - first:
+      213: -2042602911162664981
+    second: DummyTilemapVer1_29
+  - first:
+      213: -489052082703251246
+    second: DummyTilemapVer1_30
+  - first:
+      213: 5781390395883886835
+    second: DummyTilemapVer1_31
+  - first:
+      213: 9061680206539118901
+    second: DummyTilemapVer1_32
+  - first:
+      213: 8349089569884136435
+    second: DummyTilemapVer1_33
+  - first:
+      213: -2705996456473347247
+    second: DummyTilemapVer1_34
+  - first:
+      213: 8337555614035968830
+    second: DummyTilemapVer1_35
+  - first:
+      213: -8817775996314150599
+    second: DummyTilemapVer1_36
+  - first:
+      213: 4607566459079663062
+    second: DummyTilemapVer1_37
+  - first:
+      213: -6267187057564566546
+    second: DummyTilemapVer1_38
+  - first:
+      213: 1509777682028630822
+    second: DummyTilemapVer1_39
+  - first:
+      213: 1539099319223561234
+    second: DummyTilemapVer1_40
+  - first:
+      213: 1192723796491232102
+    second: DummyTilemapVer1_41
+  - first:
+      213: 954145028534773231
+    second: DummyTilemapVer1_42
+  - first:
+      213: -6922631980289127847
+    second: DummyTilemapVer1_43
+  - first:
+      213: -6290266433161995162
+    second: DummyTilemapVer1_44
+  - first:
+      213: -1309584804727321757
+    second: DummyTilemapVer1_45
+  - first:
+      213: 4106668735047861075
+    second: DummyTilemapVer1_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DummyTilemapVer1_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 126
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe45833ba885cfe0800000000000000
+      internalID: -1169378259347616067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 108
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f12aaae5805f2d0800000000000000
+      internalID: -3245678753767874682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 126
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b7eb4acb904c4760800000000000000
+      internalID: 7443395321994667956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_3
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 108
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe9aa12cdc96c9400800000000000000
+      internalID: 332256804964313583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 126
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f0c72cc8b9e82b0800000000000000
+      internalID: -5580351859404828805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 108
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75c184f555a754b0800000000000000
+      internalID: -5451707035315747457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 126
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b4b6a998dcb0150800000000000000
+      internalID: 5839987332700916525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_7
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 108
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221c73a3daab83d40800000000000000
+      internalID: 5564402592785088802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_8
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 126
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65f40a202d05991b0800000000000000
+      internalID: -5649395394642161834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 108
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7acbab26d40c09560800000000000000
+      internalID: 7318560833078475943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_10
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 126
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bc77a8ae1ebdb770800000000000000
+      internalID: 8628261499999583416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_11
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 108
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb2af936b3115a930800000000000000
+      internalID: 4153745178091299515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 90
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 353c626ae1ae3d620800000000000000
+      internalID: 2797837210884686675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 72
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0aea4ba79b68e60800000000000000
+      internalID: 7964256927719792831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_14
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 90
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e32d03f8a1cc9960800000000000000
+      internalID: 7610170401725686753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_15
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 72
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94de629524ff47c60800000000000000
+      internalID: 7815151913823300937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_16
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 90
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973d3f08a80dcb8b0800000000000000
+      internalID: -5135000181821680775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_17
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 72
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc5dcce501d2b5230800000000000000
+      internalID: 3628543473110275532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_18
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 90
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be81c3422c1fbf190800000000000000
+      internalID: -7927476902921758485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_19
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 72
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336362c79218127b0800000000000000
+      internalID: -5250773675360766413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_20
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 90
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c479658a97fe3e620800000000000000
+      internalID: 2802346698948908876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_21
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 72
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2120a1ef1993a7830800000000000000
+      internalID: 4069628512478822930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_22
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 90
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf79abf6fb3046990800000000000000
+      internalID: -7393780567487375365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_23
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 72
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2cf5e96a37f3e200800000000000000
+      internalID: 208281838046018603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_24
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 54
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd6311acfd8419f0800000000000000
+      internalID: -498617542557602339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_25
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 36
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 944f86bd30bdbc350800000000000000
+      internalID: 6038160535032755273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_26
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 54
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5c959555be12170800000000000000
+      internalID: 8152055552321111481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_27
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 36
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe7a26e1137e8960800000000000000
+      internalID: 7606143341388529404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_28
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 54
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aaa85551b19d12e0800000000000000
+      internalID: -2153404855986115927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_29
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 36
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be778f6797737a3e0800000000000000
+      internalID: -2042602911162664981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_30
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 54
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d8cecdc8b98639f0800000000000000
+      internalID: -489052082703251246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_31
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 36
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f893861fef9b3050800000000000000
+      internalID: 5781390395883886835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_32
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 54
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539d3f2132e81cd70800000000000000
+      internalID: 9061680206539118901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_33
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 36
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f3ecda7abcedd370800000000000000
+      internalID: 8349089569884136435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_34
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 54
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15bb0705f8e527ad0800000000000000
+      internalID: -2705996456473347247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_35
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 36
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e338dad18a2f4b370800000000000000
+      internalID: 8337555614035968830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_36
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 18
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9399abe2377f0a580800000000000000
+      internalID: -8817775996314150599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_37
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd9278584d51ff30800000000000000
+      internalID: 4607566459079663062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_38
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 18
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb30fc739a7609a0800000000000000
+      internalID: -6267187057564566546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_39
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 623112b7dcec3f410800000000000000
+      internalID: 1509777682028630822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_40
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 18
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21cad542daafb5510800000000000000
+      internalID: 1539099319223561234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_41
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663e30d39f76d8010800000000000000
+      internalID: 1192723796491232102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_42
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 18
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe5250229ddcd3d00800000000000000
+      internalID: 954145028534773231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_43
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a8b1044eeddef90800000000000000
+      internalID: -6922631980289127847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_44
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 18
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66cd0dc910c74b8a0800000000000000
+      internalID: -6290266433161995162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_45
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b8afefe8b63dde0800000000000000
+      internalID: -1309584804727321757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DummyTilemapVer1_46
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 18
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3530bbad471ddf830800000000000000
+      internalID: 4106668735047861075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DummyTilemapVer1_0: -1169378259347616067
+      DummyTilemapVer1_1: -3245678753767874682
+      DummyTilemapVer1_10: 8628261499999583416
+      DummyTilemapVer1_11: 4153745178091299515
+      DummyTilemapVer1_12: 2797837210884686675
+      DummyTilemapVer1_13: 7964256927719792831
+      DummyTilemapVer1_14: 7610170401725686753
+      DummyTilemapVer1_15: 7815151913823300937
+      DummyTilemapVer1_16: -5135000181821680775
+      DummyTilemapVer1_17: 3628543473110275532
+      DummyTilemapVer1_18: -7927476902921758485
+      DummyTilemapVer1_19: -5250773675360766413
+      DummyTilemapVer1_2: 7443395321994667956
+      DummyTilemapVer1_20: 2802346698948908876
+      DummyTilemapVer1_21: 4069628512478822930
+      DummyTilemapVer1_22: -7393780567487375365
+      DummyTilemapVer1_23: 208281838046018603
+      DummyTilemapVer1_24: -498617542557602339
+      DummyTilemapVer1_25: 6038160535032755273
+      DummyTilemapVer1_26: 8152055552321111481
+      DummyTilemapVer1_27: 7606143341388529404
+      DummyTilemapVer1_28: -2153404855986115927
+      DummyTilemapVer1_29: -2042602911162664981
+      DummyTilemapVer1_3: 332256804964313583
+      DummyTilemapVer1_30: -489052082703251246
+      DummyTilemapVer1_31: 5781390395883886835
+      DummyTilemapVer1_32: 9061680206539118901
+      DummyTilemapVer1_33: 8349089569884136435
+      DummyTilemapVer1_34: -2705996456473347247
+      DummyTilemapVer1_35: 8337555614035968830
+      DummyTilemapVer1_36: -8817775996314150599
+      DummyTilemapVer1_37: 4607566459079663062
+      DummyTilemapVer1_38: -6267187057564566546
+      DummyTilemapVer1_39: 1509777682028630822
+      DummyTilemapVer1_4: -5580351859404828805
+      DummyTilemapVer1_40: 1539099319223561234
+      DummyTilemapVer1_41: 1192723796491232102
+      DummyTilemapVer1_42: 954145028534773231
+      DummyTilemapVer1_43: -6922631980289127847
+      DummyTilemapVer1_44: -6290266433161995162
+      DummyTilemapVer1_45: -1309584804727321757
+      DummyTilemapVer1_46: 4106668735047861075
+      DummyTilemapVer1_5: -5451707035315747457
+      DummyTilemapVer1_6: 5839987332700916525
+      DummyTilemapVer1_7: 5564402592785088802
+      DummyTilemapVer1_8: -5649395394642161834
+      DummyTilemapVer1_9: 7318560833078475943
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
